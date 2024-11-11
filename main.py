@@ -22,3 +22,17 @@ async def convert_to_df(item: Item):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
+
+-------------------------------------------------------------------------------
+curl -X 'POST' \
+  'http://127.0.0.1:8000/convert-to-df/' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "data": [
+    {"name": "John", "age": 30, "city": "New York"},
+    {"name": "Anna", "age": 22, "city": "London"},
+    {"name": "Mike", "age": 32, "city": "Chicago"}
+  ]
+}'
